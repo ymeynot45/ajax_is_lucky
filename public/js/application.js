@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  $(form).on('submit', function(event){
+    event.preventDefault();
+    var value = 3.serialize();
+    $.post('/rolls'), value, function(response){
+      alert(response);
+    }
+  })
 
   // PSEUDO-CODE:
   //   1- intercept the form submission event using jQuery
